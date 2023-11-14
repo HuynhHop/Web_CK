@@ -14,15 +14,19 @@ public class Users implements Serializable {
 
     public Users() {
     }
-    public Users(String username, String password, String phonenumber, String address, String a) {
+    public Users(String username, String password,String firstname, String lastname, String phonenumber, String address, String a) {
         this.username = username;
         this.password = password;
+        this.firstname=firstname;
+        this.lastname=lastname;
         this.phonenumber = phonenumber;
         this.address = address;
         this.roless=a;
     }
     private String username;
     private String password;
+    private String firstname;
+    private String lastname;
     private String phonenumber;
     private String address;
     private String roless;
@@ -33,6 +37,22 @@ public class Users implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+    
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+    
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getPassword() {
