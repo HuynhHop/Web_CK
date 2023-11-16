@@ -1,12 +1,12 @@
 package murach.email;
 
 import java.io.*;
-import javax.mail.MessagingException;
+//import javax.mail.MessagingException;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 
 import javax.servlet.http.*;
-import murach.business.User;
+import murach.business.Users;
 import murach.data.UserDB;
 //import murach.util.MailUtilLocal;
 
@@ -16,6 +16,9 @@ public class EmailListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         String url = "/index.jsp";
         String action = request.getParameter("action");
         if (action == null) {
@@ -24,11 +27,17 @@ public class EmailListServlet extends HttpServlet {
         if (action.equals("join")) {
             url = "/index.jsp";
         } else if (action.equals("add")) {
-
-            String firstName = request.getParameter("firstName");
-            String lastName = request.getParameter("lastName");
-            String email = request.getParameter("email");
-            User user = new User(firstName, lastName, email);
+//            String a = "a";
+            String b = request.getParameter("username");
+            String c = request.getParameter("password");
+            String d = request.getParameter("firstname");
+            String e = request.getParameter("lastname");
+            String f = request.getParameter("phonenumber");
+            String g = request.getParameter("address");
+            String h = "0";
+//            String address="aaaa";
+//            String role="aaaa";
+            Users user = new Users(b,c,d,e,f,g,h);
             UserDB.insert(user);
             request.setAttribute("user", user);
             // send email to user

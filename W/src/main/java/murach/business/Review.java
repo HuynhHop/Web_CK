@@ -11,11 +11,11 @@ import javax.persistence.Table;
 @Table(name = "\"Review\"")
 public class Review implements Serializable {
     private int reviewId;
-    private String userr;
+    private int userr;
 
     public Review() {
     }
-    public Review(String userr, int rating, String feedback) {
+    public Review(int userr, int rating, String feedback) {
         this.userr = userr;
         this.rating = rating;
         this.feedback=feedback;
@@ -23,11 +23,11 @@ public class Review implements Serializable {
     private int rating;
     private String feedback;
     
-    public String getUserr() {
+    public int getUserr() {
         return userr;
     }
 
-    public void setUserr(String username) {
+    public void setUserr(int username) {
         this.userr = username;
     }
     

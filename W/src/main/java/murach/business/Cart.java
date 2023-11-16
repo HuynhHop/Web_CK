@@ -20,7 +20,7 @@ public class Cart implements Serializable {
         strategy = GenerationType.IDENTITY
     )
     private int orderID;
-    private String customer;
+    private int customer;
     @OneToMany(
         cascade = {CascadeType.ALL}
     )
@@ -31,18 +31,18 @@ public class Cart implements Serializable {
     public Cart() {
     }
 
-    public Cart(int id , String customer, Float totalMoney) {
+    public Cart(int id , int customer, Float totalMoney) {
         this.orderID = id;
         this.customer=customer;
         this.totalMoney = totalMoney;
         this.itemsCart = new ArrayList();
     }
     
-    public String getCustomer() {
+    public int getCustomer() {
         return this.customer;
     }
 
-    public void setCustomer(String id) {
+    public void setCustomer(int id) {
         this.customer = id;
     }
     

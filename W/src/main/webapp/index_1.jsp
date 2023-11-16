@@ -13,12 +13,20 @@
         email address below.</p>
     <form action="emailList" method="post">
         <input type="hidden" name="action" value="add">
-        <label class="pad_top">Email:</label>
-        <input type="email" name="email" required><br>
+<!--        <label class="pad_top">User ID:</label>
+        <input type="text" name="userId" required><br>-->
+        <label class="pad_top">User Name:</label>
+        <input type="text" name="username" required><br>
+        <label class="pad_top">Password:</label>
+        <input type="text" name="password" required><br>
         <label class="pad_top">First Name:</label>
-        <input type="text" name="firstName" required><br>
+        <input type="text" name="firstname" required><br>
         <label class="pad_top">Last Name:</label>
-        <input type="text" name="lastName" required><br>
+        <input type="text" name="lastname" required><br>
+        <label class="pad_top">Phone:</label>
+        <input type="text" name="phonenumber" required><br>
+        <label class="pad_top">Address:</label>
+        <input type="text" name="address" required><br>
         <label style="margin-right: 10px"> </label>
         <input type="submit" value="Join Now" class="margin_left">
     </form>

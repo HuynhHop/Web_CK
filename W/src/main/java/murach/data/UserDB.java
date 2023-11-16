@@ -3,12 +3,12 @@ package murach.data;
 import javax.persistence.*;
 
 import javax.persistence.EntityManager;
-import murach.business.User;
+import murach.business.Users;
 
 
 public class UserDB {
 
-    public static void insert(User user) {
+    public static void insert(Users user) {
         
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
@@ -24,7 +24,7 @@ public class UserDB {
         }
     }
 
-    public static void update(User user) {
+    public static void update(Users user) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
@@ -39,7 +39,7 @@ public class UserDB {
         }
     }
 
-    public static void delete(User user) {
+    public static void delete(Users user) {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
         EntityTransaction trans = em.getTransaction();
         trans.begin();
@@ -53,24 +53,24 @@ public class UserDB {
             em.close();
         }
     }
-    public static User selectUser(String email) {
-        EntityManager em = DBUtil.getEmFactory().createEntityManager();
-        String qString = "SELECT u FROM User u " +
-                "WHERE u.email = :email";
-        TypedQuery<User> q = em.createQuery(qString, User.class);
-        q.setParameter("email", email);
-        try {
-            User user = q.getSingleResult();
-            return user;
-        } catch (NoResultException e) {
-            return null;
-        } finally {
-            em.close();
-        }
-    }
-
-    public static boolean emailExists(String email) {
-        User u = selectUser(email);   
-        return u != null;
-    }
+//    public static User selectUser(String email) {
+//        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+//        String qString = "SELECT u FROM User u " +
+//                "WHERE u.email = :email";
+//        TypedQuery<User> q = em.createQuery(qString, User.class);
+//        q.setParameter("email", email);
+//        try {
+//            User user = q.getSingleResult();
+//            return user;
+//        } catch (NoResultException e) {
+//            return null;
+//        } finally {
+//            em.close();
+//        }
+//    }
+//
+//    public static boolean emailExists(String email) {
+//        User u = selectUser(email);   
+//        return u != null;
+//    }
 }

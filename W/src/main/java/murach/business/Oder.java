@@ -20,7 +20,7 @@ public class Oder implements Serializable {
         strategy = GenerationType.IDENTITY
     )
     private int orderID;
-    private String customer;
+    private int customer;
     private String orderStatus;
     @OneToMany(
         cascade = {CascadeType.ALL}
@@ -35,7 +35,7 @@ public class Oder implements Serializable {
     public Oder() {
     }
 
-    public Oder(int id , String customer, String orderStatus, Float totalMoney, Date date, String methodPayment) {
+    public Oder(int id , int customer, String orderStatus, Float totalMoney, Date date, String methodPayment) {
         this.orderID = id;
         this.customer=customer;
         this.orderStatus=orderStatus;
@@ -45,11 +45,11 @@ public class Oder implements Serializable {
         this.items = new ArrayList();
     }
     
-    public String getCustomer() {
+    public int getCustomer() {
         return this.customer;
     }
 
-    public void setCustomer(String id) {
+    public void setCustomer(int id) {
         this.customer = id;
     }
     

@@ -10,11 +10,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "\"Users\"")
 public class Users implements Serializable {
-    private String userId;
+    private int userid;
 
     public Users() {
     }
     public Users(String username, String password,String firstname, String lastname, String phonenumber, String address, String a) {
+//        this.userid=userid;
         this.username = username;
         this.password = password;
         this.firstname=firstname;
@@ -87,12 +88,13 @@ public class Users implements Serializable {
         this.roless = roless;
     }
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public String getUserId() {
-        return userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    public int getUserid() {
+        return userid;
     }
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserid(int userId) {
+        this.userid = userId;
     }
     
 }
