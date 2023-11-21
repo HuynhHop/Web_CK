@@ -1,5 +1,6 @@
 
 package murach.data;
+import java.util.List;
 import javax.persistence.*;
 
 import javax.persistence.EntityManager;
@@ -53,14 +54,32 @@ public class UserDB {
             em.close();
         }
     }
-//    public static User selectUser(String email) {
+    
+    public static List<Users> selectUser(String username, String password) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String qString = "SELECT u FROM Users u " +
+                "WHERE u.username = :username and u.password = :password";
+        TypedQuery<Users> q = em.createQuery(qString, Users.class);
+        q.setParameter("username", username);
+        q.setParameter("password", password);
+        try {
+            List<Users> users = q.getResultList();
+            return users;
+        } catch (NoResultException e) {
+            return null; // or an empty list, depending on your preference
+        } finally {
+            em.close();
+        }
+    }
+//    public static Users selectUser(String username, String password) {
 //        EntityManager em = DBUtil.getEmFactory().createEntityManager();
-//        String qString = "SELECT u FROM User u " +
-//                "WHERE u.email = :email";
-//        TypedQuery<User> q = em.createQuery(qString, User.class);
-//        q.setParameter("email", email);
+//        String qString = "SELECT u FROM Users u " +
+//                "WHERE u.username = :username and u.password=:password";
+//        TypedQuery<Users> q = em.createQuery(qString, Users.class);
+//        q.setParameter("username", username);
+//        q.setParameter("password", password);
 //        try {
-//            User user = q.getSingleResult();
+//            Users user = q.getSingleResult();
 //            return user;
 //        } catch (NoResultException e) {
 //            return null;
@@ -69,8 +88,8 @@ public class UserDB {
 //        }
 //    }
 //
-//    public static boolean emailExists(String email) {
-//        User u = selectUser(email);   
-//        return u != null;
-//    }
+    public static boolean usernameExists(String username, String password) {
+        List<Users> users = selectUser(username, password);
+        return !users.isEmpty();
+    }
 }

@@ -4,7 +4,7 @@
     Author     : Huynh Hop
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<!-- header section starts -->
+ header section starts 
 <header>
 <a href="index.jsp" class="logo"><img src="image/logo.png" alt=""></a> 
 
@@ -24,54 +24,106 @@
 
 <nav class="navbar">
     <a href="index.jsp">Trang Chủ</a>
-    <a href="index.jsp#Danhmuc">Danh mục</a>
+    <a href="#Danhmuc">Danh mục</a>
     <a href="shop.jsp">Sản phẩm</a>
-    <a href="index.jsp#Banchay">Bán chạy</a>
+    <a href="#Banchay">Bán chạy</a>
     <a href="contact.jsp">Liên hệ</a>
-    <a href="login.jsp">Đăng nhập</a>
+    <a href="login">Đăng nhập</a>
 </nav>
 
 </header>
 
-<!-- home section starts -->
-<section class="home" id="Trangchu">
+ home section starts 
+<!--<section class="home" id="Trangchu">
   <div class="content">
-    <h3>Đăng nhập </h3>
+    <h3>Đăng ký </h3>
     <p>Năm nay không vô địch thì khi nào vô địch nữa!</p>
-<!--    <a href="#" class="btn">order now</a>-->
-    <div class="login">
+    <a href="#" class="btn">order now</a>
         <form action="emailList" method="post">
              <input type="hidden" name="action" value="add">
-            <label>Mã định danh</label>
-            <input type="text" placeholder="" name="maId" value="${user.userid}"><br>
             <label>Tài khoản</label>
-            <input type="text" placeholder=" username" name="userName" value="${user.username}"><br>
+            <input type="text" placeholder=" Username" name="username" ><br>
             <label>Mật khẩu</label>
-            <input type="text" placeholder=" password" name="passWord" value="${user.password}"><br>
+            <input type="text" placeholder=" Password" name="password"><br>
             <label>Họ</label>
-            <input type="text" placeholder=" Họ" name="firstName" value="${user.firstname}"><br>
+            <input type="text" placeholder=" Họ" name="firstname" ><br>
             <label>Tên</label>
-            <input type="text" placeholder=" Tên" name="lastName" value="${user.lastname}"><br>
+            <input type="text" placeholder=" Tên" name="lastname" ><br>
             <label>Số điện thoại</label>
-            <input type="text" placeholder=" SĐT" name="phone" value="${user.phonenumber}"><br>
+            <input type="text" placeholder=" SĐT" name="phonenumber" ><br>
             <label>Địa chỉ</label>
-            <input type="text" placeholder=" Địa chỉ" name="address" value="${user.address}"><br>
+            <input type="text" placeholder=" Địa chỉ" name="address" ><br>
             
-<!--            <label>Email</label>
-            <input type="email" name="email" value="${user.email}"><br>-->
-        <input type="submit" value="Đăng nhập" class="margin_left">
+            
+        <input type="submit" value="Đăng ký" class="margin_left">
         </form>
-    </div>
   </div>
 
   <div class="image">
     <img src="image/t1.png" alt="">
   </div>
 
-</section>
-<!-- home section ends -->
+</section>-->
+  <section class="home" id="Trangchu">
+  <div class="content">
+    <h3>Đăng ký </h3>
+    <p>Năm nay không vô địch thì khi nào vô địch nữa!</p>
+    <form action="emailList" method="post" class="registration-form">
+      <input type="hidden" name="action" value="add">
+      
+      <div class="form-group">
+        <label for="username">Tài khoản</label>
+        <input type="text" id="username" placeholder="Username" name="username"><br>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" placeholder="Password" name="password"><br>
+      </div>
+      
+      <div class="form-group">
+        <label for="firstname">Họ</label>
+        <input type="text" id="firstname" placeholder="Họ" name="firstname"><br>
+      </div>
+      
+      <div class="form-group">
+        <label for="lastname">Tên</label>
+        <input type="text" id="lastname" placeholder="Tên" name="lastname"><br>
+      </div>
+      
+      <div class="form-group">
+        <label for="phonenumber">Số điện thoại</label>
+        <input type="tel" id="phonenumber" placeholder="SĐT" name="phonenumber"><br>
+      </div>
+      
+      <div class="form-group">
+        <label for="address">Địa chỉ</label>
+        <input type="text" id="address" placeholder="Địa chỉ" name="address"><br>
+      </div>
+      
+            <%
+                String mess = (String) request.getAttribute("mess");
+                if (mess != null && !mess.isEmpty()) {
+            %>
+                <p><%= mess %></p>
+            <%
+                }
+            %>
 
-<!-- footer starts -->
+      <div class="form-group">
+        <input type="submit" value="Đăng ký" class="margin_left">
+      </div>
+    </form>
+  </div>
+
+  <div class="image">
+    <img src="image/t1.png" alt="">
+  </div>
+</section>          
+
+ home section ends 
+
+ footer starts 
 <footer class="section-p1">
     <div class="col">
       <h4>Contact</h4>
@@ -116,3 +168,81 @@
       <p>@ 2023, Final Project, Lập trình Web</p>
     </div>
 </footer>
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập & Đăng ký Web</title>
+    <link rel="stylesheet" type="text/css" href="css/loginstyle.css">
+</head>
+<body>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+    
+        <form id="signinForm">
+            <h2>Login</h2>
+            <div class="inputBox">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="inputBox">
+                <input type="password" placeholder="Password">
+            </div>
+            <div class="inputBox group">
+                <a href="#">Forget Password?</a>
+                <a href="#" id="signup">Signup</a>               
+                <a href="register.jsp" >Signup</a>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Sign in">
+            </div>
+        </form>
+
+        <form id="signupForm">
+            <form action="emailList" method="post">
+                <input type="hidden" name="action" value="add">
+                <h2>Registration</h2>
+                <div class="inputBox">
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="inputBox">
+                    <input type="email" placeholder="Email Address">
+                </div>
+                <div class="inputBox">
+                    <input type="password" placeholder="Create Password" name="password" required>
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="First Name" name="firstname" required>
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="Last Name" name="lastname" required>
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="Phone Number" name="phonenumber" required>
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="Address" name="address" required>
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Register Account">
+                </div>
+                <div class="inputBox group">
+                    <a href="#">Already Have an Account? <b id="signin">Login</b></a>
+                </div>
+            </form>
+        </form>
+    </div>
+    <script>
+        let signup = document.querySelector('#signup');
+        let signin = document.querySelector('#signin');
+        let body = document.querySelector('body');
+        signup.onclick = function(){
+            body.classList.add('signup');}
+        signin.onclick = function(){
+            body.classList.remove('signup');}
+    </script>
+</body>
+</html>-->

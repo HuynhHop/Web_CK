@@ -164,7 +164,7 @@ header .navbar a:hover{
 
 .home .content p{
     font-size: 1.7rem;
-    color: #666;
+    color: #333;
     padding: 1rem 0;
 }
 
@@ -782,3 +782,43 @@ footer .copyright{
     }
 
 } 
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+.form-group a {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group span {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    text-transform: none;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+    margin-top: 0.2rem;
+    text-transform: none;
+
+}
+.registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+}

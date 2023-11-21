@@ -38,8 +38,16 @@ public class EmailListServlet extends HttpServlet {
 //            String address="aaaa";
 //            String role="aaaa";
             Users user = new Users(b,c,d,e,f,g,h);
-            UserDB.insert(user);
-            request.setAttribute("user", user);
+            if (UserDB.usernameExists(b, c)) {
+                request.setAttribute("mess", "User already exists");
+                url = "/login.jsp";
+            } else {
+                // Insert the user into the database
+                UserDB.insert(user);
+                request.setAttribute("user", user);
+                url = "/thanks.jsp";
+            }
+            
             // send email to user
 //            String to = email;
 //            String from = "huynh3896@gmail.com";
@@ -74,7 +82,7 @@ public class EmailListServlet extends HttpServlet {
 //                        + "SUBJECT: " + subject + "\n\n"
 //                        + body + "\n\n");
 //            }
-            url = "/thanks.jsp";
+//            url = "/thanks.jsp";
         }
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }

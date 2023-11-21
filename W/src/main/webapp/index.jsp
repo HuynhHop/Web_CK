@@ -22,7 +22,8 @@
     <a href="shop.jsp">Sản phẩm</a>
     <a href="#Banchay">Bán chạy</a>
     <a href="contact.jsp">Liên hệ</a>
-    <a href="index_1.jsp">Đăng nhập</a>
+    <a href="login">Đăng nhập</a>
+<!--    <a href="login.jsp">Đăng ký</a>-->
 </nav>
 
 </header>
