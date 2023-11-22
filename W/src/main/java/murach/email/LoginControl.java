@@ -53,15 +53,24 @@ public class LoginControl extends HttpServlet {
 
             if (!users.isEmpty()) {
                 // User authenticated successfully
+                Users authenticatedUser = users.get(0);
+                int userId = authenticatedUser.getUserid();
+
+                // Ki?m tra xem userId có giá tr? hay không
+                System.out.println("UserID:           " + userId);
                 request.setAttribute("user", users.get(0));
 //                url = "/index.jsp";
                 HttpSession session=request.getSession();
                 session.setAttribute("acc",users);
                 Cookie u=new Cookie("username",b);
                 Cookie p=new Cookie("password",c);
-                u.setMaxAge(30);
+                // Chuy?n ??i int thành chu?i
+                String userIdString = String.valueOf(userId);
+                Cookie id=new Cookie("userId", userIdString);
+                u.setMaxAge(1000); //cài ??t th?i gian t?n t?i cookie trên trình duy?t
+                id.setMaxAge(1000);
                 if (d!=null ) {
-                    p.setMaxAge(30);
+                    p.setMaxAge(1000);
 //                    response.addCookie(p);
                 }
                 else {
@@ -70,6 +79,7 @@ public class LoginControl extends HttpServlet {
 //                p.setMaxAge(30);
                 response.addCookie(u);
                 response.addCookie(p);
+                response.addCookie(id);
                 url = "/index.jsp";
                 
             } else {
@@ -89,6 +99,10 @@ public class LoginControl extends HttpServlet {
         Cookie arr[]=request.getCookies();
         if (arr !=null) {
             for (Cookie o :arr){
+                if (o.getName().equals("userId")) {
+                    // Chuy?n ??i giá tr? t? chu?i sang int
+                    int userId = Integer.parseInt(o.getValue());
+                }
                 if (o.getName().equals("username")){
                     request.setAttribute("username",o.getValue());
                 }

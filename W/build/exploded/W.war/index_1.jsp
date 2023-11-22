@@ -1,78 +1,3 @@
-<!--
-<%--<%@page contentType="text/html" pageEncoding="UTF-8"%>--%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf_8">
-    <title>Murach's Java Servlets and JSP</title>
-    <link rel="stylesheet" href="main.css" type="text/css"/>
-</head>
-<body>
-    <h1>Join our email list</h1>
-    <p>To join our email list, enter your name and
-        email address below.</p>
-    <form action="login" method="post">
-        <input type="hidden" name="action" value="add">
-        <label class="pad_top">User ID:</label>
-        <input type="text" name="userId" required><br>
-        <label class="pad_top">User Name:</label>
-        <input type="text" name="username" required><br>
-        <label class="pad_top">Password:</label>
-        <input type="text" name="password" required><br>
-        <label class="pad_top">First Name:</label>
-        <input type="text" name="firstname" required><br>
-        <label class="pad_top">Last Name:</label>
-        <input type="text" name="lastname" required><br>
-        <label class="pad_top">Phone:</label>
-        <input type="text" name="phonenumber" required><br>
-        <label class="pad_top">Address:</label>
-        <input type="text" name="address" required><br>
-        <label style="margin-right: 10px"> </label>
-        <input type="submit" value="Join Now" class="margin_left">
-    </form>
-</body>
-</html>
-
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Murach's Java Servlets and JSP</title>
-    <link rel="stylesheet" href="main.css" type="text/css"/>
-</head>
-<body>
-
-<h1>LOG IN</h1>
-<p>Enter your username and password below.</p>
-<form action="login" method="post">
-    <input type="hidden" name="action" value="add">
-     
-    <label class="pad_top">User ID:</label>
-    <input type="text" name="userId" required><br>
-    
-    <label class="pad_top">User Name:</label>
-    <input type="text" name="username" required><br>
-    <label class="pad_top">Password:</label>
-    <input type="text" name="password" required><br>
-     
-    <label style="margin-right: 10px"> </label>
-    
-
-    <input type="submit" value="Join Now" class="margin_left">
-</form>
-
-
- Your other HTML content goes here 
-
-</body>
-</html>-->
-    
-<%-- 
-    Document   : contact
-    Created on : Nov 15, 2023, 10:14:56 AM
-    Author     : Huynh Hop
---%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -98,7 +23,50 @@
     <a href="shop.jsp">Sản phẩm</a>
     <a href="#Banchay">Bán chạy</a>
     <a href="contact.jsp">Liên hệ</a>
-    <a href="login">Đăng nhập</a>
+<!--    <a href="login">Đăng nhập</a>-->
+    <a href="#" id="usernameLink">Xin chào ${username}</a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy danh sách các cookie từ trình duyệt
+            var cookies = document.cookie.split(";");
+
+            // Biến để theo dõi xem cookie "username" có tồn tại hay không
+            var usernameCookieExists = false;
+            var usernameValue;
+
+            // Duyệt qua danh sách cookie để kiểm tra sự tồn tại của cookie "username"
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith("username=")) {
+                    usernameCookieExists = true;
+                    // Lấy giá trị của cookie "username"
+                    usernameValue = cookie.substring("username=".length, cookie.length);
+                    break;
+                }
+            }
+
+            // Lấy đối tượng anchor (thẻ a) bằng cách sử dụng id
+            var usernameLink = document.getElementById("usernameLink");
+
+            // Nếu cookie "username" tồn tại, cập nhật nội dung của liên kết
+            if (usernameCookieExists) {
+                usernameLink.textContent = "Xin chào " + usernameValue;
+                // Đặt href để chuyển hướng đến một trang cụ thể nếu cần
+                usernameLink.href = "login";
+            } else {
+                // Nếu không có cookie, đặt thuộc tính href để chuyển hướng đến một trang đăng nhập
+                usernameLink.href = "login";
+                usernameLink.textContent = "Đăng nhập";
+            }
+
+            // Gán một hàm xử lý sự kiện cho sự kiện nhấp chuột
+            usernameLink.addEventListener("click", function() {
+                // Hiển thị giá trị trong cửa sổ cảnh báo (có thể thay đổi thành xử lý khác)
+                alert("Xin chào " + usernameValue);
+            });
+        });
+        </script>
+    
 </nav>
 
 </header>
@@ -174,7 +142,7 @@
       </div>
     </form>
   </div>
-
+      
   <div class="image">
     <img src="image/t1.png" alt="">
   </div>

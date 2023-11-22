@@ -22,8 +22,50 @@
     <a href="shop.jsp">Sản phẩm</a>
     <a href="#Banchay">Bán chạy</a>
     <a href="contact.jsp">Liên hệ</a>
-    <a href="login">Đăng nhập</a>
+<!--    <a href="login">Đăng nhập</a>-->
 <!--    <a href="login.jsp">Đăng ký</a>-->
+    <a href="#" id="usernameLink">Xin chào ${username}</a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy danh sách các cookie từ trình duyệt
+            var cookies = document.cookie.split(";");
+
+            // Biến để theo dõi xem cookie "username" có tồn tại hay không
+            var usernameCookieExists = false;
+            var usernameValue;
+
+            // Duyệt qua danh sách cookie để kiểm tra sự tồn tại của cookie "username"
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith("username=")) {
+                    usernameCookieExists = true;
+                    // Lấy giá trị của cookie "username"
+                    usernameValue = cookie.substring("username=".length, cookie.length);
+                    break;
+                }
+            }
+
+            // Lấy đối tượng anchor (thẻ a) bằng cách sử dụng id
+            var usernameLink = document.getElementById("usernameLink");
+
+            // Nếu cookie "username" tồn tại, cập nhật nội dung của liên kết
+            if (usernameCookieExists) {
+                usernameLink.textContent = "Xin chào " + usernameValue;
+                // Đặt href để chuyển hướng đến một trang cụ thể nếu cần
+                usernameLink.href = "thanks.jsp";
+            } else {
+                // Nếu không có cookie, đặt thuộc tính href để chuyển hướng đến một trang đăng nhập
+                usernameLink.href = "login";
+                usernameLink.textContent = "Đăng nhập";
+            }
+
+            // Gán một hàm xử lý sự kiện cho sự kiện nhấp chuột
+            usernameLink.addEventListener("click", function() {
+                // Hiển thị giá trị trong cửa sổ cảnh báo (có thể thay đổi thành xử lý khác)
+                alert("Xin chào " + usernameValue);
+            });
+        });
+        </script>
 </nav>
 
 </header>

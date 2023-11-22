@@ -695,6 +695,15 @@ footer .copyright{
         border-left: .5rem solid var(--red);
         background: #fff;
     }
+    
+    header .navbar input{
+        margin: 10rem;
+        padding: 10rem;
+        display: block;
+        border: 12.rem solid rgba(0,0,0,.1);
+        border-left: 8rem solid var(--red);
+        background: #fff;
+    }
 
     .home .content h3{
         font-size: 6.5rem;
