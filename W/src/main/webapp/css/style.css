@@ -822,3 +822,11 @@ footer .copyright{
     max-width: 400px;
     margin: 0 auto;
 }
+.remember-me {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.remember-me label {
+    margin-right: 10px; /* Adjust the margin as needed */
+}

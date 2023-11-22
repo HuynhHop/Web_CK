@@ -31,6 +31,7 @@ public class LoginControl extends HttpServlet {
 //            String a = "a";
             String b = request.getParameter("username");
             String c = request.getParameter("password");
+            String d = request.getParameter("remember");
 //            String d = request.getParameter("firstname");
 //            String e = request.getParameter("lastname");
 //            String f = request.getParameter("phonenumber");
@@ -53,7 +54,24 @@ public class LoginControl extends HttpServlet {
             if (!users.isEmpty()) {
                 // User authenticated successfully
                 request.setAttribute("user", users.get(0));
+//                url = "/index.jsp";
+                HttpSession session=request.getSession();
+                session.setAttribute("acc",users);
+                Cookie u=new Cookie("username",b);
+                Cookie p=new Cookie("password",c);
+                u.setMaxAge(30);
+                if (d!=null ) {
+                    p.setMaxAge(30);
+//                    response.addCookie(p);
+                }
+                else {
+                    p.setMaxAge(0);
+                }
+//                p.setMaxAge(30);
+                response.addCookie(u);
+                response.addCookie(p);
                 url = "/index.jsp";
+                
             } else {
                 // Authentication failed
                 request.setAttribute("mess", "Wrong username or password");
@@ -68,6 +86,17 @@ public class LoginControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        doPost(request, response);
+        Cookie arr[]=request.getCookies();
+        if (arr !=null) {
+            for (Cookie o :arr){
+                if (o.getName().equals("username")){
+                    request.setAttribute("username",o.getValue());
+                }
+                if (o.getName().equals("password")){
+                    request.setAttribute("password",o.getValue());
+                }
+            }
+        }
         request.getRequestDispatcher("index_1.jsp").forward(request,response);
     }
 }

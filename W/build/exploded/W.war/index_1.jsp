@@ -143,12 +143,17 @@
       
       <div class="form-group">
         <label for="username">Tài khoản</label>
-        <input type="text" id="username" placeholder="Username" name="username"><br>
+        <input type="text" id="username" placeholder="Username" name="username" value="${username}"><br>
       </div>
       
       <div class="form-group">
         <label for="password">Mật khẩu</label>
-        <input type="password" id="password" placeholder="Password" name="password"><br>
+        <input type="password" id="password" placeholder="Password" name="password" value="${password}"><br>
+      </div>
+      
+      <div class="form-group remember-me">
+            <label for="remember">Lưu</label>
+            <input type="checkbox" id="remember" value="1" name="remember" checked>
       </div>
       
       <div class="form-group">
