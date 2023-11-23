@@ -21,7 +21,7 @@
     <a href="#Danhmuc">Danh mục</a>
     <a href="shop.jsp">Sản phẩm</a>
     <a href="#Banchay">Bán chạy</a>
-    <a href="contact.jsp">Liên hệ</a>
+    <a href="review">Liên hệ</a>
 <!--    <a href="login">Đăng nhập</a>-->
 <!--    <a href="login.jsp">Đăng ký</a>-->
     <a href="#" id="usernameLink">Xin chào ${username}</a>
@@ -52,10 +52,10 @@
             if (usernameCookieExists) {
                 usernameLink.textContent = "Xin chào " + usernameValue;
                 // Đặt href để chuyển hướng đến một trang cụ thể nếu cần
-                usernameLink.href = "thanks.jsp";
+                usernameLink.href = "infor";
             } else {
                 // Nếu không có cookie, đặt thuộc tính href để chuyển hướng đến một trang đăng nhập
-                usernameLink.href = "login";
+                usernameLink.href = "login"; //phuong thuc Get
                 usernameLink.textContent = "Đăng nhập";
             }
 

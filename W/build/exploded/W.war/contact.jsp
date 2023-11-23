@@ -85,15 +85,17 @@
 </section>
 
 <section id="form-details">
-  <form action="">
+  <form action="review" method="post">
     <span>LEAVE A MESSAGE</span>
     <h2>Chúng tôi rất vui khi nghe phản hồi từ bạn</h2>
-    <input type="text" placeholder="Your Name">
-    <input type="text" placeholder="E-mail">
-    <input type="text" placeholder="Subject">
-    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message">
-    </textarea>
-    <button class="normal">Submit</button>
+      <input type="hidden" name="action" value="add">
+        <input type="text" id="name" placeholder="Name" name="name"><br>
+        <input type="text" id="phone" placeholder="Phone" name="phone"><br>
+        <input type="text" id="subject" placeholder="Subject" name="subject"><br>
+        <input type="text" id="feedback" placeholder="Feedback" name="feedback"><br>
+        <div class="form-group">
+          <input type="submit" value="Đăng ký" class="margin_left">
+        </div>
   </form>
 
   <div class="people">

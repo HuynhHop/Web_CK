@@ -9,7 +9,7 @@
     <h1>Thanks for joining our email list</h1>
     <p>Here is the information that you entered:</p>
         <label>First Name:</label>
-        <span>${user.firstname}</span><br>
+        <span>${users.userid}</span><br>
         <label>Last Name:</label>
         <span>${user.lastname}</span><br>
 </body>

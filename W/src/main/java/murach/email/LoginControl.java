@@ -50,10 +50,10 @@ public class LoginControl extends HttpServlet {
 //                url = "/index_1.jsp";
 //            }
             List<Users> users = UserDB.selectUser(b, c);
-
+                
             if (!users.isEmpty()) {
                 // User authenticated successfully
-                Users authenticatedUser = users.get(0);
+                Users authenticatedUser = users.get(0); //lay cot dau tien cot 0
                 int userId = authenticatedUser.getUserid();
 
                 // Ki?m tra xem userId có giá tr? hay không
@@ -88,6 +88,24 @@ public class LoginControl extends HttpServlet {
                 url = "/index_1.jsp";
             }
                 
+        }
+        else if (action.equals("logout")) {
+            // Xóa cookie "username"
+            Cookie usernameCookie = new Cookie("username", "");
+            usernameCookie.setMaxAge(0);
+            response.addCookie(usernameCookie);
+
+            // Xóa cookie "password"
+            Cookie passwordCookie = new Cookie("password", "");
+            passwordCookie.setMaxAge(0);
+            response.addCookie(passwordCookie);
+
+            // Xóa cookie "userId"
+            Cookie userIdCookie = new Cookie("userId", "");
+            userIdCookie.setMaxAge(0);
+            response.addCookie(userIdCookie);
+            
+            url = "/index_1.jsp";
         }
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }

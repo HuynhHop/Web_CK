@@ -11,32 +11,41 @@ import javax.persistence.Table;
 @Table(name = "\"Review\"")
 public class Review implements Serializable {
     private int reviewId;
-    private int userr;
-
+    private String name;
+    private String phone;
     public Review() {
     }
-    public Review(int userr, int rating, String feedback) {
-        this.userr = userr;
-        this.rating = rating;
+    public Review(String userr, String phone, String subject, String feedback) {
+        this.name = userr;
+        this.phone= phone;
+        this.subject = subject;
         this.feedback=feedback;
     }
-    private int rating;
+    private String subject;
     private String feedback;
     
-    public int getUserr() {
-        return userr;
+    public String getName() {
+        return name;
     }
 
-    public void setUserr(int username) {
-        this.userr = username;
+    public void setName(String username) {
+        this.name = username;
     }
     
-    public int getrating() {
-        return rating;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setrating(int rating) {
-        this.rating = rating;
+    public void setPhone(String username) {
+        this.phone = username;
+    }
+    
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String rating) {
+        this.subject = rating;
     }
     
     public String getFeedback() {

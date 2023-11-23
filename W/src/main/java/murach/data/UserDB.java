@@ -71,6 +71,22 @@ public class UserDB {
             em.close();
         }
     }
+    
+    public static List<Users> selectUsername(String username) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String qString = "SELECT u FROM Users u " +
+                "WHERE u.username = :username";
+        TypedQuery<Users> q = em.createQuery(qString, Users.class);
+        q.setParameter("username", username);
+        try {
+            List<Users> users = q.getResultList();
+            return users;
+        } catch (NoResultException e) {
+            return null; // or an empty list, depending on your preference
+        } finally {
+            em.close();
+        }
+    }
 //    public static Users selectUser(String username, String password) {
 //        EntityManager em = DBUtil.getEmFactory().createEntityManager();
 //        String qString = "SELECT u FROM Users u " +

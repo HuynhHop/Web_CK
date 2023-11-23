@@ -141,6 +141,7 @@
         <input type="submit" value="Đăng nhập" class="margin_left">
       </div>
     </form>
+    
   </div>
       
   <div class="image">
