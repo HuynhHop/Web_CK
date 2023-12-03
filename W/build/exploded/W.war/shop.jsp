@@ -40,9 +40,93 @@
 <!-- product section starts-->
 <section class="products">
     <h1 class="heading"> Our <span>Products</span></h1>
-  
-      <div class="box-container">
-          <div class="box" onclick="window.location.href='product.jsp';">
+        <div class="box-container">
+            <div class="box" onclick="window.location.href='product.jsp';">
+                <span class="price">400.000~500.000 đồng</span>
+                <!--<img src="image/pd1.jpg" alt="">-->
+                <input type="tel" id="phonenumber" value="${product.images}"><br>
+                <h3>Thức ăn cho gà T2500</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <a href="#" class="btn">Add cart</a>
+            </div>
+
+            <div class="box">
+              <span class="price">400.000~500.000 đồng</span>
+              <img src="image/pd2.jpg" alt="">
+              <h3>Thức ăn cho cá TD03</h3>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+              </div>
+              <a href="#" class="btn">Add cart</a>
+            </div>
+
+            <div class="box">
+              <span class="price">400.000~500.000 đồng</span>
+              <img src="image/pd3.jpg" alt="">
+              <h3>Thức ăn cho cá FS5</h3>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+              </div>
+              <a href="#" class="btn">Add cart</a>
+            </div>
+
+            <div class="box">
+              <span class="price">400.000~500.000 đồng</span>
+              <img src="image/pd4.jpg" alt="">
+              <h3>Thức ăn cho heo HIMART A75</h3>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+              </div>
+              <a href="#" class="btn">Add cart</a>
+            </div>
+
+            <div class="box">
+              <span class="price">400.000~500.000 đồng</span>
+              <img src="image/pd5.jpg" alt="">
+              <h3>Thức ăn cho heo HIMART 222</h3>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+              </div>
+              <a href="#" class="btn">Add cart</a>
+            </div>
+
+            <div class="box">
+              <span class="price">400.000~500.000 đồng</span>
+              <img src="image/pd6.jpg" alt="">
+              <h3>Thức ăn cho vịt, ngan 370</h3>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+              </div>
+              <a href="#" class="btn">Add cart</a>
+            </div>
+
+            <div class="box">
               <span class="price">400.000~500.000 đồng</span>
               <img src="image/pd1.jpg" alt="">
               <h3>Thức ăn cho gà T2500</h3>
@@ -55,7 +139,7 @@
               </div>
               <a href="#" class="btn">Add cart</a>
           </div>
-  
+
           <div class="box">
             <span class="price">400.000~500.000 đồng</span>
             <img src="image/pd2.jpg" alt="">
@@ -69,7 +153,7 @@
             </div>
             <a href="#" class="btn">Add cart</a>
           </div>
-  
+
           <div class="box">
             <span class="price">400.000~500.000 đồng</span>
             <img src="image/pd3.jpg" alt="">
@@ -83,7 +167,7 @@
             </div>
             <a href="#" class="btn">Add cart</a>
           </div>
-  
+
           <div class="box">
             <span class="price">400.000~500.000 đồng</span>
             <img src="image/pd4.jpg" alt="">
@@ -97,7 +181,7 @@
             </div>
             <a href="#" class="btn">Add cart</a>
           </div>
-  
+
           <div class="box">
             <span class="price">400.000~500.000 đồng</span>
             <img src="image/pd5.jpg" alt="">
@@ -111,7 +195,7 @@
             </div>
             <a href="#" class="btn">Add cart</a>
           </div>
-  
+
           <div class="box">
             <span class="price">400.000~500.000 đồng</span>
             <img src="image/pd6.jpg" alt="">
@@ -125,92 +209,8 @@
             </div>
             <a href="#" class="btn">Add cart</a>
           </div>
-          
-          <div class="box">
-            <span class="price">400.000~500.000 đồng</span>
-            <img src="image/pd1.jpg" alt="">
-            <h3>Thức ăn cho gà T2500</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <a href="#" class="btn">Add cart</a>
-        </div>
 
-        <div class="box">
-          <span class="price">400.000~500.000 đồng</span>
-          <img src="image/pd2.jpg" alt="">
-          <h3>Thức ăn cho cá TD03</h3>
-          <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">Add cart</a>
         </div>
-
-        <div class="box">
-          <span class="price">400.000~500.000 đồng</span>
-          <img src="image/pd3.jpg" alt="">
-          <h3>Thức ăn cho cá FS5</h3>
-          <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">Add cart</a>
-        </div>
-
-        <div class="box">
-          <span class="price">400.000~500.000 đồng</span>
-          <img src="image/pd4.jpg" alt="">
-          <h3>Thức ăn cho heo HIMART A75</h3>
-          <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">Add cart</a>
-        </div>
-
-        <div class="box">
-          <span class="price">400.000~500.000 đồng</span>
-          <img src="image/pd5.jpg" alt="">
-          <h3>Thức ăn cho heo HIMART 222</h3>
-          <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">Add cart</a>
-        </div>
-
-        <div class="box">
-          <span class="price">400.000~500.000 đồng</span>
-          <img src="image/pd6.jpg" alt="">
-          <h3>Thức ăn cho vịt, ngan 370</h3>
-          <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <a href="#" class="btn">Add cart</a>
-        </div>
-  
-      </div>
 </section>
 <!-- product section end-->
 

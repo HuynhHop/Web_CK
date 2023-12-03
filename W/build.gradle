@@ -8,8 +8,9 @@ repositories {
 
 dependencies {
     providedCompile 'jakarta.platform:jakarta.jakartaee-web-api:8.0.0'
-    implementation group: 'org.eclipse.persistence', name: 'eclipselink', version: '2.7.12'
-    implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
-    implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
-    testImplementation     'junit:junit:4.13'
+    implementation 'org.eclipse.persistence:eclipselink:2.7.12'
+    implementation 'org.postgresql:postgresql:42.6.0'
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+    implementation 'javax.servlet:jstl:1.2'
+    testImplementation 'junit:junit:4.13'
 }

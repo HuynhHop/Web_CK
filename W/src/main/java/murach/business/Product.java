@@ -106,4 +106,13 @@ public class Product implements Serializable {
         this.productID = productID;
     }
     
+    @Override
+    public String toString() {
+        return "Product{" +
+               "productid=" + productID +
+               ", productname='" + productName + '\'' +
+               ", price=" + price +
+               // ... (thêm các thu?c tính khác)
+               '}';
+    }
 }

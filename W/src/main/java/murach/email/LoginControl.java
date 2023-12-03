@@ -55,7 +55,7 @@ public class LoginControl extends HttpServlet {
                 // User authenticated successfully
                 Users authenticatedUser = users.get(0); //lay cot dau tien cot 0
                 int userId = authenticatedUser.getUserid();
-
+                String role=authenticatedUser.getRoless();
                 // Ki?m tra xem userId có giá tr? hay không
                 System.out.println("UserID:           " + userId);
                 request.setAttribute("user", users.get(0));
@@ -64,6 +64,7 @@ public class LoginControl extends HttpServlet {
                 session.setAttribute("acc",users);
                 Cookie u=new Cookie("username",b);
                 Cookie p=new Cookie("password",c);
+                Cookie r=new Cookie("role",role);
                 // Chuy?n ??i int thành chu?i
                 String userIdString = String.valueOf(userId);
                 Cookie id=new Cookie("userId", userIdString);

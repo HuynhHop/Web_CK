@@ -19,7 +19,8 @@
 <nav class="navbar">
     <a href="index.jsp">Trang Chủ</a>
     <a href="#Danhmuc">Danh mục</a>
-    <a href="shop.jsp">Sản phẩm</a>
+    <a href="product">Sản phẩm</a>
+<!--    <a href="ManagerProduct.jsp">Sản phẩm</a>-->
     <a href="#Banchay">Bán chạy</a>
     <a href="review">Liên hệ</a>
 <!--    <a href="login">Đăng nhập</a>-->

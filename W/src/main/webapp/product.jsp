@@ -30,39 +30,39 @@
 
 <!-- product detail section starts -->
 <section id="prodetails" class="section-p1">
-    <div class="single-pro-image">
-        <img src="image/pd1.jpg" width="100%" id="MainImg" alt="">
+        <div class="single-pro-image">
+            <img src="image/pd1.jpg" width="100%" id="MainImg" alt="">
 
-        <div class="small-img-group">
-            <div class="small-img-col">
-                <img src="image/pd1.jpg" width="100%" class="small-img" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="image/pd2.jpg" width="100%" class="small-img" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="image/pd3.jpg" width="100%" class="small-img" alt="">
-            </div>
-            <div class="small-img-col">
-                <img src="image/pd4.jpg" width="100%" class="small-img" alt="">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="image/pd1.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="image/pd2.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="image/pd3.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="image/pd4.jpg" width="100%" class="small-img" alt="">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="single-pro-details">
-        <h4>Thức ăn cho gà</h4>
-        <h2>200.000đ</h2>
-        <select>
-            <option>Chọn Size</option>
-            <option>Nhỏ</option>
-            <option>Vừa</option>
-            <option>Lớn</option>
-        </select>
-        <input type="number" value="1">
-        <button class="btn">Add To Cart</button>
-        <h4>Chi Tiết Sản Phẩm</h4>
-        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate suscipit sunt nisi veritatis ipsam totam commodi iusto reiciendis, animi quod nam repellendus aliquam saepe perferendis veniam! Cumque suscipit veniam rem.</span>
-    </div>
+        <div class="single-pro-details">
+            <h4>Thức ăn cho gà</h4>
+            <h2>200.000đ</h2>
+            <select>
+                <option>Chọn Size</option>
+                <option>Nhỏ</option>
+                <option>Vừa</option>
+                <option>Lớn</option>
+            </select>
+            <input type="number" value="1">
+            <button class="btn">Add To Cart</button>
+            <h4>Chi Tiết Sản Phẩm</h4>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate suscipit sunt nisi veritatis ipsam totam commodi iusto reiciendis, animi quod nam repellendus aliquam saepe perferendis veniam! Cumque suscipit veniam rem.</span>
+        </div>
 </section>
 
 <section class="products">
