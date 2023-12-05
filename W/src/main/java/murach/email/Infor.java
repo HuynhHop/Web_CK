@@ -111,7 +111,7 @@ public class Infor extends HttpServlet {
                     request.setAttribute("user", user);
 
                     // Chuy?n h??ng ??n trang thanks_1.jsp
-                    request.getRequestDispatcher("/thanks_1.jsp").forward(request, response);
+                    request.getRequestDispatcher("/inforUser.jsp").forward(request, response);
                 } else {
                     // Tr??ng h?p không tìm th?y thông tin user trong c? s? d? li?u
                     // Có th? x? lý theo ý c?a b?n, ví d?: thông báo l?i ho?c chuy?n h??ng ??n trang khác

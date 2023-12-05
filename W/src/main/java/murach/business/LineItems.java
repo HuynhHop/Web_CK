@@ -1,19 +1,24 @@
 package murach.business;
 
 import java.io.Serializable;
-import java.util.Date;
 //import java.time.LocalDate;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.*;
 
 @Entity
 @Table(name = "\"LineItems\"")
 public class LineItems implements Serializable {
     @Id
+    private int idlineitems;
+
+    public int getIdlineitems() {
+        return idlineitems;
+    }
+
+    public void setIdlineitems(int idlineitems) {
+        this.idlineitems = idlineitems;
+    }
     private int product;
 
     public LineItems() {

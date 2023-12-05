@@ -1,8 +1,3 @@
-<%-- 
-    Document   : contact
-    Created on : Nov 15, 2023, 10:14:56 AM
-    Author     : Huynh Hop
---%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -28,7 +23,50 @@
     <a href="shop.jsp">Sản phẩm</a>
     <a href="#Banchay">Bán chạy</a>
     <a href="contact.jsp">Liên hệ</a>
-    <a href="login">Đăng nhập</a>
+<!--    <a href="login">Đăng nhập</a>-->
+    <a href="#" id="usernameLink">Xin chào ${username}</a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy danh sách các cookie từ trình duyệt
+            var cookies = document.cookie.split(";");
+
+            // Biến để theo dõi xem cookie "username" có tồn tại hay không
+            var usernameCookieExists = false;
+            var usernameValue;
+
+            // Duyệt qua danh sách cookie để kiểm tra sự tồn tại của cookie "username"
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith("username=")) {
+                    usernameCookieExists = true;
+                    // Lấy giá trị của cookie "username"
+                    usernameValue = cookie.substring("username=".length, cookie.length);
+                    break;
+                }
+            }
+
+            // Lấy đối tượng anchor (thẻ a) bằng cách sử dụng id
+            var usernameLink = document.getElementById("usernameLink");
+
+            // Nếu cookie "username" tồn tại, cập nhật nội dung của liên kết
+            if (usernameCookieExists) {
+                usernameLink.textContent = "Xin chào " + usernameValue;
+                // Đặt href để chuyển hướng đến một trang cụ thể nếu cần
+                usernameLink.href = "login";
+            } else {
+                // Nếu không có cookie, đặt thuộc tính href để chuyển hướng đến một trang đăng nhập
+                usernameLink.href = "login";
+                usernameLink.textContent = "Đăng nhập";
+            }
+
+            // Gán một hàm xử lý sự kiện cho sự kiện nhấp chuột
+            usernameLink.addEventListener("click", function() {
+                // Hiển thị giá trị trong cửa sổ cảnh báo (có thể thay đổi thành xử lý khác)
+                alert("Xin chào " + usernameValue);
+            });
+        });
+        </script>
+    
 </nav>
 
 </header>
@@ -66,40 +104,30 @@
 </section>-->
   <section class="home" id="Trangchu">
   <div class="content">
-    <h3>Đăng ký </h3>
+    <h3>Đăng nhập </h3>
     <p>Năm nay không vô địch thì khi nào vô địch nữa!</p>
-    <form action="emailList" method="post" class="registration-form">
+    <form action="login" method="post" class="registration-form">
       <input type="hidden" name="action" value="add">
       
       <div class="form-group">
         <label for="username">Tài khoản</label>
-        <input type="text" id="username" placeholder="Username" name="username"><br>
+        <input type="text" id="username" placeholder="Username" name="username" value="${username}"><br>
       </div>
       
       <div class="form-group">
         <label for="password">Mật khẩu</label>
-        <input type="password" id="password" placeholder="Password" name="password"><br>
+        <input type="password" id="password" placeholder="Password" name="password" value="${password}"><br>
+      </div>
+      
+      <div class="form-group remember-me">
+            <label for="remember">Lưu</label>
+            <input type="checkbox" id="remember" value="1" name="remember" checked>
       </div>
       
       <div class="form-group">
-        <label for="firstname">Họ</label>
-        <input type="text" id="firstname" placeholder="Họ" name="firstname"><br>
+        <a href="register.jsp">Đăng ký</a>
       </div>
       
-      <div class="form-group">
-        <label for="lastname">Tên</label>
-        <input type="text" id="lastname" placeholder="Tên" name="lastname"><br>
-      </div>
-      
-      <div class="form-group">
-        <label for="phonenumber">Số điện thoại</label>
-        <input type="tel" id="phonenumber" placeholder="SĐT" name="phonenumber"><br>
-      </div>
-      
-      <div class="form-group">
-        <label for="address">Địa chỉ</label>
-        <input type="text" id="address" placeholder="Địa chỉ" name="address"><br>
-      </div>
       
             <%
                 String mess = (String) request.getAttribute("mess");
@@ -109,13 +137,13 @@
             <%
                 }
             %>
-
       <div class="form-group">
-        <input type="submit" value="Đăng ký" class="margin_left">
+        <input type="submit" value="Đăng nhập" class="margin_left">
       </div>
     </form>
+    
   </div>
-
+      
   <div class="image">
     <img src="image/t1.png" alt="">
   </div>

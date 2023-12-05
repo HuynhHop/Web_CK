@@ -56,37 +56,44 @@ public class LoginControl extends HttpServlet {
                 Users authenticatedUser = users.get(0); //lay cot dau tien cot 0
                 int userId = authenticatedUser.getUserid();
                 String role=authenticatedUser.getRoless();
-                // Ki?m tra xem userId có giá tr? hay không
-                System.out.println("UserID:           " + userId);
-                request.setAttribute("user", users.get(0));
-//                url = "/index.jsp";
-                HttpSession session=request.getSession();
-                session.setAttribute("acc",users);
-                Cookie u=new Cookie("username",b);
-                Cookie p=new Cookie("password",c);
-                Cookie r=new Cookie("role",role);
-                // Chuy?n ??i int thành chu?i
-                String userIdString = String.valueOf(userId);
-                Cookie id=new Cookie("userId", userIdString);
-                u.setMaxAge(1000); //cài ??t th?i gian t?n t?i cookie trên trình duy?t
-                id.setMaxAge(1000);
-                if (d!=null ) {
-                    p.setMaxAge(1000);
-//                    response.addCookie(p);
+                // Ki?m tra xem role có giá tr? hay không
+                if ("0".equals(role))
+                {
+                    System.out.println("UserID:           " + userId);
+                    request.setAttribute("user", users.get(0));
+    //                url = "/index.jsp";
+                    HttpSession session=request.getSession();
+                    session.setAttribute("acc",users);
+                    Cookie u=new Cookie("username",b);
+                    Cookie p=new Cookie("password",c);
+                    Cookie r=new Cookie("role",role);
+                    // Chuy?n ??i int thành chu?i
+                    String userIdString = String.valueOf(userId);
+                    Cookie id=new Cookie("userId", userIdString);
+                    u.setMaxAge(1000); //cài ??t th?i gian t?n t?i cookie trên trình duy?t
+                    id.setMaxAge(1000);
+                    if (d!=null ) {
+                        p.setMaxAge(1000);
+    //                    response.addCookie(p);
+                    }
+                    else {
+                        p.setMaxAge(0);
+                    }
+    //                p.setMaxAge(30);
+                    response.addCookie(u);
+                    response.addCookie(p);
+                    response.addCookie(id);
+                    url = "/index.jsp";
                 }
-                else {
-                    p.setMaxAge(0);
+                else
+                {
+                    request.setAttribute("user", users.get(0));
+                    url = "/indexAdmin.jsp";
                 }
-//                p.setMaxAge(30);
-                response.addCookie(u);
-                response.addCookie(p);
-                response.addCookie(id);
-                url = "/index.jsp";
-                
             } else {
                 // Authentication failed
                 request.setAttribute("mess", "Wrong username or password");
-                url = "/index_1.jsp";
+                url = "/login.jsp";
             }
                 
         }
@@ -106,7 +113,7 @@ public class LoginControl extends HttpServlet {
             userIdCookie.setMaxAge(0);
             response.addCookie(userIdCookie);
             
-            url = "/index_1.jsp";
+            url = "/login.jsp";
         }
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }
@@ -130,6 +137,6 @@ public class LoginControl extends HttpServlet {
                 }
             }
         }
-        request.getRequestDispatcher("index_1.jsp").forward(request,response);
+        request.getRequestDispatcher("login.jsp").forward(request,response);
     }
 }
